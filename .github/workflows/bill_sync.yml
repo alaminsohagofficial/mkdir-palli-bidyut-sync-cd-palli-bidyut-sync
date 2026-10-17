@@ -2,18 +2,18 @@ name: Automated Utility Bill Status Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *' # প্রতিদিন বাংলাদেশ সময় সকাল ৬টায় স্বয়ংক্রিয়ভাবে রান করবে
-  workflow_dispatch: # গিটহাব ড্যাশবোর্ড থেকে ম্যানুয়ালি রান (Test Run) করার জন্য
+    - cron: '0 0 * * *' # প্রতিদিন বাংলাদেশ সময় সকাল ৬টায় স্বয়ংক্রিয়ভাবে ব্যাকএন্ডে রান করবে
+  workflow_dispatch: # গিটহাব ড্যাশবোর্ড থেকে যেকোনো সময় ম্যানুয়ালি রান করার জন্য
 
 jobs:
   sync-billing-accounts:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # ওল্ড v3 সংস্করণ পরিবর্তন করে লেটেস্ট v4 করা হলো
 
       - name: Set up Python Environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # ওল্ড v4 সংস্করণ পরিবর্তন করে লেটেস্ট v5 করা হলো
         with:
           python-version: '3.10'
 
