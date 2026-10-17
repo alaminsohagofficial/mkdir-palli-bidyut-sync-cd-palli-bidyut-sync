@@ -2,8 +2,8 @@ name: Automated Utility Bill Status Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *' # প্রতিদিন বাংলাদেশ সময় সকাল ৬টায় (০২:০০ UTC) স্বয়ংক্রিয়ভাবে ব্যাকএন্ডে রান করবে
-  workflow_dispatch: # যখনই প্রয়োজন গিটহাব ড্যাশবোর্ড থেকে এক ক্লিকে ম্যানুয়ালি রান করার জন্য
+    - cron: '0 0 * * *' # প্রতিদিন বাংলাদেশ সময় সকাল ৬টায় স্বয়ংক্রিয়ভাবে রান করবে
+  workflow_dispatch: # গিটহাব ড্যাশবোর্ড থেকে ম্যানুয়ালি রান (Test Run) করার জন্য
 
 jobs:
   sync-billing-accounts:
